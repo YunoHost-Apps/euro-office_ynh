@@ -83,9 +83,9 @@ arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre
     arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.2/euro-office-documentserver_9.3.1-dev.1_arm64.deb"
     arm64.sha256 = "d548741bc7af52ada79ef9ecbda92fcff5383d5fa66e63769e179fac9f2851b7"
     extract = false
-    rename = "eurooffice-documentserver.deb"
-    autoupdate.asset.amd64 = "^eurooffice-documentserver_amd64.deb$"
-    autoupdate.asset.arm64 = "^eurooffice-documentserver_arm64.deb$"
+    rename = "euro-office-documentserver.deb"
+    autoupdate.asset.amd64 = "^euro-office-documentserver_amd64.deb$"
+    autoupdate.asset.arm64 = "^euro-office-documentserver_arm64.deb$"
     autoupdate.strategy = "latest_github_release"
     
 [resources.sources.src]
