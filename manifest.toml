@@ -79,9 +79,9 @@ arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre
 
     [resources.sources.main]
     amd64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.2/euro-office-documentserver_9.3.1-dev.1_amd64.deb"
-    amd64.sha256 = "sha256:742516fedaeddc52072881c3fe60dcb046db1b1cbdd0a674cda8dd1e4502d380"
+    amd64.sha256 = "742516fedaeddc52072881c3fe60dcb046db1b1cbdd0a674cda8dd1e4502d380"
     arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.2/euro-office-documentserver_9.3.1-dev.1_arm64.deb"
-    arm64.sha256 = "sha256:d548741bc7af52ada79ef9ecbda92fcff5383d5fa66e63769e179fac9f2851b7"
+    arm64.sha256 = "d548741bc7af52ada79ef9ecbda92fcff5383d5fa66e63769e179fac9f2851b7"
     extract = false
     rename = "eurooffice-documentserver.deb"
     autoupdate.asset.amd64 = "^eurooffice-documentserver_amd64.deb$"
@@ -90,7 +90,7 @@ arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre
     
 [resources.sources.src]
     url = "https://github.com/Euro-Office/server/archive/refs/tags/v9.3.2.tar.gz"
-    sha256 = "sha256:4f18fa2c183c6a53e344a6d0be0bd5fbd7428becca9d3a3a6c7e6ed41e26bb02"
+    sha256 = "4f18fa2c183c6a53e344a6d0be0bd5fbd7428becca9d3a3a6c7e6ed41e26bb02"
     # Autoupdater disabled because keeps failing everyday, because no tag found after sanity filtering
     # autoupdate.strategy = "latest_github_tag"
     # autoupdate.version_regex = "^v9.*$"
