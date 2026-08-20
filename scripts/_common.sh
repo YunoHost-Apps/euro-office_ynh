@@ -65,11 +65,11 @@ setup_sources() {
     # We use the .deb cause tar.xz doesn't contains submodules and management scripts
     tar xf "$install_dir/deb/data.tar.xz"
     popd
-    mv "$install_dir/deb/etc/eurooffice/documentserver/default.json" "$conf_dir/default.json"
-    mv "$install_dir/deb/etc/eurooffice/documentserver/production-linux.json" "$conf_dir/production-linux.json"
-    mv "$install_dir/deb/etc/eurooffice/documentserver/log4js" "$conf_dir/log4js"
-    mv "$install_dir/deb/etc/eurooffice/documentserver/nginx" "$conf_dir/nginx"
-    mv "$install_dir/deb/var/www/eurooffice/documentserver" "$install_dir/documentserver"
+    mv "$install_dir/deb/etc/euro-office/documentserver/default.json" "$conf_dir/default.json"
+    mv "$install_dir/deb/etc/euro-office/documentserver/production-linux.json" "$conf_dir/production-linux.json"
+    mv "$install_dir/deb/etc/euro-office/documentserver/log4js" "$conf_dir/log4js"
+    mv "$install_dir/deb/etc/euro-office/documentserver/nginx" "$conf_dir/nginx"
+    mv "$install_dir/deb/var/www/euro-office/documentserver" "$install_dir/documentserver"
     mv "$install_dir/deb/usr/bin" "$install_dir/bin"
     mkdir -p "$install_dir/documentserver/fonts"
     ynh_safe_rm "$install_dir/deb"
