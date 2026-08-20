@@ -60,7 +60,7 @@ setup_sources() {
     mkdir -p "$conf_dir"
     ynh_setup_source --dest_dir="$install_dir/deb"
     pushd "$install_dir/deb"
-    ar vx "$install_dir/deb/eurooffice-documentserver.deb"
+    ar vx "$install_dir/deb/euro-office-documentserver.deb"
 
     # We use the .deb cause tar.xz doesn't contains submodules and management scripts
     tar xf "$install_dir/deb/data.tar.xz"
@@ -88,16 +88,16 @@ setup_sources() {
 
     # Some config an scripts should be patched in order to support 
     # ynh files and port organisation
-    ynh_replace --match="/var/www/eurooffice/" --replace="$install_dir/" --file="$conf_dir/production-linux.json"
-    ynh_replace --match="/etc/eurooffice/documentserver/" --replace="$install_dir/config/" --file="$conf_dir/production-linux.json"
-    ynh_replace --match="/var/lib/eurooffice/documentserver/App_Data/" --replace="$data_dir/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/var/www/euro-office/" --replace="$install_dir/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/etc/euro-office/documentserver/" --replace="$install_dir/config/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/var/lib/euro-office/documentserver/App_Data/" --replace="$data_dir/" --file="$conf_dir/production-linux.json"
     ynh_store_file_checksum "$conf_dir/production-linux.json"
 
     # Hack for documentserver script
     for script in $(ls "$install_dir/bin/")
     do
-        ynh_replace --match="/var/www/eurooffice/" --replace="$install_dir/" --file="$install_dir/bin/$script"
-        ynh_replace --match="/etc/eurooffice/documentserver" --replace="$conf_dir" --file="$install_dir/bin/$script"
+        ynh_replace --match="/var/www/euro-office/" --replace="$install_dir/" --file="$install_dir/bin/$script"
+        ynh_replace --match="/etc/euro-office/documentserver" --replace="$conf_dir" --file="$install_dir/bin/$script"
         ynh_replace --match="ds:ds" --replace="$app:$app" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-docservice" --replace="$app-docservice" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-converter" --replace="$app-converter" --file="$install_dir/bin/$script"
