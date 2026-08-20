@@ -4,17 +4,17 @@ It shall NOT be edited by hand.
 -->
 
 <h1>
-  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/eurooffice.png" width="32px" alt="Logo of Euro-Office">
+  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/euro-office.png" width="32px" alt="Logo of Euro-Office">
   Euro-Office, packaged for YunoHost
 </h1>
 
 Create and edit documents collaboratively
 
-[![Version: 9.3.2~ynh1](https://img.shields.io/badge/Version-9.3.2~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/eurooffice/)
+[![Version: 9.3.2~ynh1](https://img.shields.io/badge/Version-9.3.2~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/euro-office/)
 
 <div align="center">
-<a href="https://apps.yunohost.org/app/eurooffice"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
-<a href="https://github.com/YunoHost-Apps/eurooffice_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
+<a href="https://apps.yunohost.org/app/euro-office"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
+<a href="https://github.com/YunoHost-Apps/euro-office_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
 </div>
 
 
@@ -23,19 +23,19 @@ Create and edit documents collaboratively
 
 ## 📦 Developer info
 
-[![Automatic tests level](https://apps.yunohost.org/badge/cilevel/eurooffice)](https://ci-apps.yunohost.org/ci/apps/eurooffice/)
+[![Automatic tests level](https://apps.yunohost.org/badge/cilevel/euro-office)](https://ci-apps.yunohost.org/ci/apps/euro-office/)
 
 🛠️ Upstream Euro-Office repository: <https://github.com/Euro-Office/DocumentServer>
 
-Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/eurooffice_ynh/tree/testing).
+Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/euro-office_ynh/tree/testing).
 
 The `testing` branch can be tested using:
 ```
 # fresh install:
-sudo yunohost app install https://github.com/YunoHost-Apps/eurooffice_ynh/tree/testing
+sudo yunohost app install https://github.com/YunoHost-Apps/euro-office_ynh/tree/testing
 
 # upgrade an existing install:
-sudo yunohost app upgrade eurooffice -u https://github.com/YunoHost-Apps/eurooffice_ynh/tree/testing
+sudo yunohost app upgrade euro-office -u https://github.com/YunoHost-Apps/euro-office_ynh/tree/testing
 ```
 
 ### 📚 App packaging documentation
