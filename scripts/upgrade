@@ -53,7 +53,7 @@ ynh_script_progression "Upgrading euro-office..."
 setup_sources
 
 #=================================================
-# COMPILE euro-office
+# COMPILE EURO-OFFICE
 #=================================================
 
 if [[ "$rebuild_without_limitations" == "1" ]] ; then
