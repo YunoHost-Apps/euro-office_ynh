@@ -2,7 +2,7 @@
 
 packaging_format = 2
 
-id = "eurooffice"
+id = "euro-office"
 name = "Euro-Office"
 description.en = "Create and edit documents collaboratively"
 description.fr = "Créez et éditer des documents collaborativement"
