@@ -21,7 +21,7 @@ ynh_script_progression "Setting up source files..."
 setup_sources
 
 #=================================================
-# COMPILE EUROOFFICE
+# COMPILE EURO-OFFICE
 #=================================================
 
 if [[ "$rebuild_without_limitations" == "1" ]] ; then
@@ -55,17 +55,17 @@ chown "$app:$app" "$conf_dir/local.json"
 
 pushd "$install_dir"
     openssl req -x509 -newkey rsa:2048 \
-    -keyout eurooffice.key \
-    -out eurooffice.crt \
+    -keyout euro-office.key \
+    -out euro-office.crt \
     -days 3650 \
     -nodes \
     -subj "/C=/ST=/L=/O=/OU=/CN=eurooffice"
     openssl pkcs12 -export \
-    -out eurooffice.pfx \
-    -inkey eurooffice.key \
-    -in eurooffice.crt \
+    -out euro-office.pfx \
+    -inkey euro-office.key \
+    -in euro-office.crt \
     -password pass:
-    mv eurooffice.pfx $install_dir/documentserver/server/FileConverter/
+    mv euro-office.pfx $install_dir/documentserver/server/FileConverter/
 popd 
 
 #=================================================
