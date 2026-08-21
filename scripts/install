@@ -21,16 +21,6 @@ ynh_script_progression "Setting up source files..."
 setup_sources
 
 #=================================================
-# COMPILE EURO-OFFICE
-#=================================================
-
-if [[ "$rebuild_without_limitations" == "1" ]] ; then
-    ynh_script_progression "Compiling $app..."
-
-    compile
-fi
-
-#=================================================
 # SETUP RABBIT MQ VHOST
 #=================================================
 ynh_script_progression "Configuring rabbitmq vhost $app..."
