@@ -67,14 +67,6 @@ arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre
     help.en = "Disabling this option allows Euro-Office to accept unauthenticated HTTPS requests, which can be useful if your server is not exposed to the internet and cannot obtain a Let's Encrypt certificate."
     help.fr = "Désactiver cette option permet à Euro-Office d'accepter les requêtes HTTPS non authentifiées, ce qui peut être utile si votre serveur n'est pas exposé sur internet et ne peut pas obtenir de certificat Let's Encrypt."
     
-    [install.rebuild_without_limitations]
-    ask.en = "Remove usage limitations by replacing official Euro-Office binaries"
-    ask.fr = "Supprimer les limites d'usage en remplaçant les binaires officiels d'Euro-Office"
-    type = "boolean"
-    default = 1
-    help.en = "Recompile binaries in order to remove usage limitations (number of users, opened documents, smartphone usage). Note: the install and upgrade will be slower."
-    help.fr = "Recompile les binaires afin de supprimer les limitations d'utilisation (nombre d'utilisateurs, documents ouverts, utilisation sur smartphone)."
-
 [resources]
 
     [resources.sources.main]
