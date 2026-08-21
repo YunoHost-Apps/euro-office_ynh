@@ -74,9 +74,9 @@ popd
 ynh_script_progression "Populating postgresql database $app..."
 
 db_dump="$install_dir/documentserver/server/schema/postgresql/createdb.sql"
-echo "alter table doc_changes owner to $app;" >> $db_dump
-echo "alter table task_result owner to $app;" >> $db_dump
-ynh_psql_db_shell $app < "$install_dir/documentserver/server/schema/postgresql/createdb.sql"
+echo "alter table doc_changes owner to euro_office;" >> $db_dump
+echo "alter table task_result owner to euro_office;" >> $db_dump
+ynh_psql_db_shell euro_office < "$install_dir/documentserver/server/schema/postgresql/createdb.sql"
 
 #=================================================
 # SYSTEM CONFIGURATION
