@@ -7,7 +7,6 @@ To integrate the office editor into your app (Nextcloud, Seafile, etc.):
   - JWT secret key: “__JWT_SECRET__”
 3. Test editing or creating a document.
 
-More information is available in the documentation for this package `Web administration > App > OnlyOffice`.
+More information is available in the documentation for this package `Web administration > App > Euro-Office`.
 
-If you are facing any problem or want to improve this app, please open a new issue here: <https://github.com/YunoHost-Apps/onlyoffice_ynh>
-
+If you are facing any problem or want to improve this app, please open a new issue here: <https://github.com/YunoHost-Apps/euro-office_ynh>
