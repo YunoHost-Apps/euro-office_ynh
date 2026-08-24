@@ -24,9 +24,6 @@ init_settings() {
         reject_unauthorized=true
     fi
     reject_unauthorized=${reject_unauthorized,,}
-    # if official_build was set previously, invert the value
-    official_build=${official_build:-0}
-    ynh_app_setting_set_default --key=rebuild_without_limitations --value="$((1-official_build))" # true
     
     # Renew cache tag
     cache_tag=$(date +'%Y.%m.%d-%H%M' | openssl md5 | awk '{print $2}')
@@ -74,14 +71,6 @@ setup_sources() {
     mkdir -p "$install_dir/documentserver/fonts"
     ynh_safe_rm "$install_dir/deb"
 
-    # We use sources in order to recompile binary
-    if [[ "$rebuild_without_limitations" == "1" ]] ; then
-        ynh_setup_source --source_id="src" --dest_dir="$install_dir/src"
-        ynh_replace --match="const buildVersion = " --replace="const buildVersion = '${YNH_APP_MANIFEST_VERSION%%~*}';" --file="$install_dir/src/Common/sources/commondefines.js"
-    buildNumber=$(ynh_read_manifest "resources.sources.src.url"| sed "s/\.tar\.gz//" | grep -Eo "[0-9]+$")
-        ynh_replace --match="const buildNumber = " --replace="const buildNumber = '$buildNumber';" --file="$install_dir/src/Common/sources/commondefines.js"
-        ynh_replace --match="const buildDate = " --replace="const buildDate = '$( date +%F )';" --file="$install_dir/src/Common/sources/license.js"
-    fi
     set_permissions
 
     #ynh_setup_source --source_id="fonts" --dest_dir="/usr/share/fonts/custom/" 
