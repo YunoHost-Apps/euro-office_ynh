@@ -31,10 +31,6 @@ disk = "2100M"
 ram.build = "800M"
 ram.runtime = "800M"
 
-[antifeatures]
-arbitrary-limitations.en = "The official Euro-Office build limits the number of users and open documents. This package recompiles this part according to the AGPLv3 licence, removing these artificial limitations."
-arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre d'utilisateurs et de documents ouverts. Ce paquet recompile cette partie conformément à la licence AGPLv3, supprimant ainsi ces limitations artificielles."
-
 [install]
     [install.domain]
     type = "domain"
