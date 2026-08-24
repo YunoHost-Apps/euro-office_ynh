@@ -10,7 +10,7 @@ It shall NOT be edited by hand.
 
 Create and edit documents collaboratively
 
-[![Version: 9.3.2~ynh1](https://img.shields.io/badge/Version-9.3.2~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/euro-office/)
+[![Version: 9.3.3~ynh1](https://img.shields.io/badge/Version-9.3.3~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/euro-office/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/euro-office"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
