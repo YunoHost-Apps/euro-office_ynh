@@ -35,10 +35,6 @@ set_permissions() {
     chown "$app:www-data" "$install_dir"
     chown "$app:www-data" "$install_dir/documentserver"
     chmod go=--- "$install_dir/"{bin,config,Data}
-    if [ -d "$install_dir/src" ] ; then
-        chmod go=--- "$install_dir/src"
-    fi
-
     chmod o=--- "$install_dir/documentserver"
     chmod a-w "$install_dir/documentserver"
     if [ -f "$install_dir/config/local.json" ] ; then
