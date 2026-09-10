@@ -52,14 +52,3 @@ services = ["__APP__-docservice"]
 	example = "1m"
 	pattern.regexp = '^\d+m$'
 	pattern.error = "Provide a value in minutes like '1m'"
-
-[main.rebuild]
-name.en = "Limitations"
-
-	[main.rebuild.rebuild_without_limitations]
-	ask.en = "Remove usage limitations"
-	ask.fr = "Supprimer les limites d'usage"
-	type = "boolean"
-	default = 1
-	help.en = "Recompile binaries in order to remove usage limitations (number of users, opened documents, smartphone usage). Note: the install and upgrade will be slower. After changing this setting you should trigger a force upgrade of this app by yourself to be effective." 
-	help.fr = "Recompile les binaires afin de supprimer les limitations d'utilisation (nombre d'utilisateurs, documents ouverts, utilisation sur smartphone). NB: l'installation et la mise à jour seront plus lentes. Après avoir modifié ce paramètre, vous devez déclencher vous-même une mise à jour forcée de l'app pour que le changement soit éffectif." 

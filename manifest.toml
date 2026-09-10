@@ -2,12 +2,12 @@
 
 packaging_format = 2
 
-id = "eurooffice"
+id = "euro-office"
 name = "Euro-Office"
 description.en = "Create and edit documents collaboratively"
 description.fr = "Créez et éditer des documents collaborativement"
 
-version = "9.3.2~ynh1"
+version = "9.3.3~ynh1"
 
 maintainers = []
 
@@ -19,7 +19,7 @@ code = "https://github.com/Euro-Office/DocumentServer"
 #cpe = "cpe:2.3:a:onlyoffice:document_server"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = ["amd64", "arm64"]
 multi_instance = true
@@ -30,10 +30,6 @@ sso = "not_relevant"
 disk = "2100M"
 ram.build = "800M"
 ram.runtime = "800M"
-
-[antifeatures]
-arbitrary-limitations.en = "The official Euro-Office build limits the number of users and open documents. This package recompiles this part according to the AGPLv3 licence, removing these artificial limitations."
-arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre d'utilisateurs et de documents ouverts. Ce paquet recompile cette partie conformément à la licence AGPLv3, supprimant ainsi ces limitations artificielles."
 
 [install]
     [install.domain]
@@ -67,35 +63,19 @@ arbitrary-limitations.fr = "La version officielle d'Euro-Office limite le nombre
     help.en = "Disabling this option allows Euro-Office to accept unauthenticated HTTPS requests, which can be useful if your server is not exposed to the internet and cannot obtain a Let's Encrypt certificate."
     help.fr = "Désactiver cette option permet à Euro-Office d'accepter les requêtes HTTPS non authentifiées, ce qui peut être utile si votre serveur n'est pas exposé sur internet et ne peut pas obtenir de certificat Let's Encrypt."
     
-    [install.rebuild_without_limitations]
-    ask.en = "Remove usage limitations by replacing official Euro-Office binaries"
-    ask.fr = "Supprimer les limites d'usage en remplaçant les binaires officiels d'Euro-Office"
-    type = "boolean"
-    default = 1
-    help.en = "Recompile binaries in order to remove usage limitations (number of users, opened documents, smartphone usage). Note: the install and upgrade will be slower."
-    help.fr = "Recompile les binaires afin de supprimer les limitations d'utilisation (nombre d'utilisateurs, documents ouverts, utilisation sur smartphone)."
-
 [resources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.2/euro-office-documentserver_9.3.1-dev.1_amd64.deb"
-    amd64.sha256 = "sha256:742516fedaeddc52072881c3fe60dcb046db1b1cbdd0a674cda8dd1e4502d380"
-    arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.2/euro-office-documentserver_9.3.1-dev.1_arm64.deb"
-    arm64.sha256 = "sha256:d548741bc7af52ada79ef9ecbda92fcff5383d5fa66e63769e179fac9f2851b7"
+    amd64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.3/euro-office-documentserver_9.3.3-dev.1_amd64.deb"
+    amd64.sha256 = "ac8eb9a0faec47d17d680b88971871d5b402d6b07afa6d372204bbd6e77cc71c"
+    arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.3/euro-office-documentserver_9.3.3-dev.1_arm64.deb"
+    arm64.sha256 = "17aa7583b2b19bda35343d400ac7e18af149e69152e8cc489c9975c9839e933a"
     extract = false
-    rename = "eurooffice-documentserver.deb"
-    autoupdate.asset.amd64 = "^eurooffice-documentserver_amd64.deb$"
-    autoupdate.asset.arm64 = "^eurooffice-documentserver_arm64.deb$"
+    rename = "euro-office-documentserver.deb"
+    autoupdate.asset.amd64 = "^euro-office-documentserver_amd64.deb$"
+    autoupdate.asset.arm64 = "^euro-office-documentserver_arm64.deb$"
     autoupdate.strategy = "latest_github_release"
-    
-[resources.sources.src]
-    url = "https://github.com/Euro-Office/server/archive/refs/tags/v9.3.2.tar.gz"
-    sha256 = "4f18fa2c183c6a53e344a6d0be0bd5fbd7428becca9d3a3a6c7e6ed41e26bb02"
-    # Autoupdater disabled because keeps failing everyday, because no tag found after sanity filtering
-    # autoupdate.strategy = "latest_github_tag"
-    # autoupdate.version_regex = "^v9.*$"
-    # autoupdate.upstream = "https://github.com/ONLYOFFICE/server"
-    
+        
 #    [resources.sources.fonts]
 #    url = "https://forge.liiib.re/indiehost/libre.sh/fonts/-/archive/4f5ad93ee65a862bddfc70eb48ac98e531968da7/fonts-4f5ad93ee65a862bddfc70eb48ac98e531968da7.tar.gz"
 #    sha256 = "aed831e465bf775320a6298a5a7aac0197754de410f736c1020996267678016f"

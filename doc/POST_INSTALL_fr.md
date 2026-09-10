@@ -7,7 +7,7 @@ Pour intégrer l'éditeur bureautique dans votre app (Nextcloud, Seafile, etc.):
   - Clé secrète JWT: "__JWT_SECRET__"
 3. Tester l'édition ou la création d'un document.
 
-Plus d'info sont disponibles dans la documentation de ce paquet `Web administration > App > OnlyOffice`.
+Plus d'info sont disponibles dans la documentation de ce paquet `Web administration > App > Euro-Office`.
 
-Si vous rencontrez un problème ou souhaitez améliorer cette application, veuillez ouvrir un nouveau ticket ici: <https://github.com/YunoHost-Apps/onlyoffice_ynh>
+Si vous rencontrez un problème ou souhaitez améliorer cette application, veuillez ouvrir un nouveau ticket ici: <https://github.com/YunoHost-Apps/euro-office_ynh>
 

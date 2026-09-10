@@ -24,9 +24,6 @@ init_settings() {
         reject_unauthorized=true
     fi
     reject_unauthorized=${reject_unauthorized,,}
-    # if official_build was set previously, invert the value
-    official_build=${official_build:-0}
-    ynh_app_setting_set_default --key=rebuild_without_limitations --value="$((1-official_build))" # true
     
     # Renew cache tag
     cache_tag=$(date +'%Y.%m.%d-%H%M' | openssl md5 | awk '{print $2}')
@@ -38,10 +35,6 @@ set_permissions() {
     chown "$app:www-data" "$install_dir"
     chown "$app:www-data" "$install_dir/documentserver"
     chmod go=--- "$install_dir/"{bin,config,Data}
-    if [ -d "$install_dir/src" ] ; then
-        chmod go=--- "$install_dir/src"
-    fi
-
     chmod o=--- "$install_dir/documentserver"
     chmod a-w "$install_dir/documentserver"
     if [ -f "$install_dir/config/local.json" ] ; then
@@ -60,44 +53,36 @@ setup_sources() {
     mkdir -p "$conf_dir"
     ynh_setup_source --dest_dir="$install_dir/deb"
     pushd "$install_dir/deb"
-    ar vx "$install_dir/deb/onlyoffice-documentserver.deb"
+    ar vx "$install_dir/deb/euro-office-documentserver.deb"
 
     # We use the .deb cause tar.xz doesn't contains submodules and management scripts
     tar xf "$install_dir/deb/data.tar.xz"
     popd
-    mv "$install_dir/deb/etc/onlyoffice/documentserver/default.json" "$conf_dir/default.json"
-    mv "$install_dir/deb/etc/onlyoffice/documentserver/production-linux.json" "$conf_dir/production-linux.json"
-    mv "$install_dir/deb/etc/onlyoffice/documentserver/log4js" "$conf_dir/log4js"
-    mv "$install_dir/deb/etc/onlyoffice/documentserver/nginx" "$conf_dir/nginx"
-    mv "$install_dir/deb/var/www/onlyoffice/documentserver" "$install_dir/documentserver"
+    mv "$install_dir/deb/etc/euro-office/documentserver/default.json" "$conf_dir/default.json"
+    mv "$install_dir/deb/etc/euro-office/documentserver/production-linux.json" "$conf_dir/production-linux.json"
+    mv "$install_dir/deb/etc/euro-office/documentserver/log4js" "$conf_dir/log4js"
+    mv "$install_dir/deb/etc/euro-office/documentserver/nginx" "$conf_dir/nginx"
+    mv "$install_dir/deb/var/www/euro-office/documentserver" "$install_dir/documentserver"
     mv "$install_dir/deb/usr/bin" "$install_dir/bin"
     mkdir -p "$install_dir/documentserver/fonts"
     ynh_safe_rm "$install_dir/deb"
 
-    # We use sources in order to recompile binary
-    if [[ "$rebuild_without_limitations" == "1" ]] ; then
-        ynh_setup_source --source_id="src" --dest_dir="$install_dir/src"
-        ynh_replace --match="const buildVersion = " --replace="const buildVersion = '${YNH_APP_MANIFEST_VERSION%%~*}';" --file="$install_dir/src/Common/sources/commondefines.js"
-    buildNumber=$(ynh_read_manifest "resources.sources.src.url"| sed "s/\.tar\.gz//" | grep -Eo "[0-9]+$")
-        ynh_replace --match="const buildNumber = " --replace="const buildNumber = '$buildNumber';" --file="$install_dir/src/Common/sources/commondefines.js"
-        ynh_replace --match="const buildDate = " --replace="const buildDate = '$( date +%F )';" --file="$install_dir/src/Common/sources/license.js"
-    fi
     set_permissions
 
     #ynh_setup_source --source_id="fonts" --dest_dir="/usr/share/fonts/custom/" 
 
     # Some config an scripts should be patched in order to support 
     # ynh files and port organisation
-    ynh_replace --match="/var/www/onlyoffice/" --replace="$install_dir/" --file="$conf_dir/production-linux.json"
-    ynh_replace --match="/etc/onlyoffice/documentserver/" --replace="$install_dir/config/" --file="$conf_dir/production-linux.json"
-    ynh_replace --match="/var/lib/onlyoffice/documentserver/App_Data/" --replace="$data_dir/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/var/www/euro-office/" --replace="$install_dir/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/etc/euro-office/documentserver/" --replace="$install_dir/config/" --file="$conf_dir/production-linux.json"
+    ynh_replace --match="/var/lib/euro-office/documentserver/App_Data/" --replace="$data_dir/" --file="$conf_dir/production-linux.json"
     ynh_store_file_checksum "$conf_dir/production-linux.json"
 
     # Hack for documentserver script
     for script in $(ls "$install_dir/bin/")
     do
-        ynh_replace --match="/var/www/onlyoffice/" --replace="$install_dir/" --file="$install_dir/bin/$script"
-        ynh_replace --match="/etc/onlyoffice/documentserver" --replace="$conf_dir" --file="$install_dir/bin/$script"
+        ynh_replace --match="/var/www/euro-office/" --replace="$install_dir/" --file="$install_dir/bin/$script"
+        ynh_replace --match="/etc/euro-office/documentserver" --replace="$conf_dir" --file="$install_dir/bin/$script"
         ynh_replace --match="ds:ds" --replace="$app:$app" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-docservice" --replace="$app-docservice" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-converter" --replace="$app-converter" --file="$install_dir/bin/$script"

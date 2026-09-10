@@ -25,17 +25,17 @@ ynh_app_setting_set_default --key=allowed_urls --value="https://${nextclouddomai
 init_settings
 
 # Remove old install made by .deb
-if dpkg-query --show onlyoffice-documentserver &> /dev/null; then
+if dpkg-query --show euro-office-documentserver &> /dev/null; then
 
     documentserver-prepare4shutdown.sh
-    ynh_backup_if_checksum_is_different --file="/etc/onlyoffice/documentserver/default.json"
-    ynh_backup_if_checksum_is_different --file="/etc/onlyoffice/documentserver/local.json"
-    _ynh_apt purge onlyoffice-documentserver
-    ynh_hide_info ynh_safe_rm "/etc/apt/sources.list.d/onlyoffice.list"
+    ynh_backup_if_checksum_is_different --file="/etc/euro-office/documentserver/default.json"
+    ynh_backup_if_checksum_is_different --file="/etc/euro-office/documentserver/local.json"
+    _ynh_apt purge euro-office-documentserver
+    ynh_hide_info ynh_safe_rm "/etc/apt/sources.list.d/euro-office.list"
     ynh_hide_info ynh_safe_rm "/etc/apt/sources.list.d/nodesource.list"
-    ynh_hide_info ynh_safe_rm "/var/lib/dpkg/info/onlyoffice-documentserver.prerm"
-    ynh_hide_info ynh_safe_rm "/var/lib/onlyoffice"
-    ynh_hide_info ynh_safe_rm "/etc/onlyoffice"
+    ynh_hide_info ynh_safe_rm "/var/lib/dpkg/info/euro-office-documentserver.prerm"
+    ynh_hide_info ynh_safe_rm "/var/lib/euro-office"
+    ynh_hide_info ynh_safe_rm "/etc/euro-office"
 
     for service in "ds-converter" "ds-docservice" "ds-metrics"; do
         if yunohost service status "$service" >/dev/null 2>&1
@@ -48,19 +48,9 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression "Upgrading OnlyOffice..."
+ynh_script_progression "Upgrading euro-office..."
 
 setup_sources
-
-#=================================================
-# COMPILE ONLYOFFICE
-#=================================================
-
-if [[ "$rebuild_without_limitations" == "1" ]] ; then
-    ynh_script_progression "Compiling $app..."
-
-    compile
-fi
 
 #=================================================
 # SETUP RABBIT MQ VHOST
@@ -87,17 +77,17 @@ chown "$app:$app" "$conf_dir/local.json"
 
 pushd "$install_dir"
 openssl req -x509 -newkey rsa:2048 \
--keyout onlyoffice.key \
--out onlyoffice.crt \
+-keyout euro-office.key \
+-out euro-office.crt \
 -days 3650 \
 -nodes \
--subj "/C=/ST=/L=/O=/OU=/CN=onlyoffice"
+-subj "/C=/ST=/L=/O=/OU=/CN=euro-office"
 openssl pkcs12 -export \
--out onlyoffice.pfx \
--inkey onlyoffice.key \
--in onlyoffice.crt \
+-out euro-office.pfx \
+-inkey euro-office.key \
+-in euro-office.crt \
 -password pass:
-mv onlyoffice.pfx $install_dir/documentserver/server/FileConverter/
+mv euro-office.pfx $install_dir/documentserver/server/FileConverter/
 popd 
 
 #=================================================

@@ -21,16 +21,6 @@ ynh_script_progression "Setting up source files..."
 setup_sources
 
 #=================================================
-# COMPILE ONLYOFFICE
-#=================================================
-
-if [[ "$rebuild_without_limitations" == "1" ]] ; then
-    ynh_script_progression "Compiling $app..."
-
-    compile
-fi
-
-#=================================================
 # SETUP RABBIT MQ VHOST
 #=================================================
 ynh_script_progression "Configuring rabbitmq vhost $app..."
@@ -55,17 +45,17 @@ chown "$app:$app" "$conf_dir/local.json"
 
 pushd "$install_dir"
     openssl req -x509 -newkey rsa:2048 \
-    -keyout onlyoffice.key \
-    -out onlyoffice.crt \
+    -keyout euro-office.key \
+    -out euro-office.crt \
     -days 3650 \
     -nodes \
-    -subj "/C=/ST=/L=/O=/OU=/CN=onlyoffice"
+    -subj "/C=/ST=/L=/O=/OU=/CN=eurooffice"
     openssl pkcs12 -export \
-    -out onlyoffice.pfx \
-    -inkey onlyoffice.key \
-    -in onlyoffice.crt \
+    -out euro-office.pfx \
+    -inkey euro-office.key \
+    -in euro-office.crt \
     -password pass:
-    mv onlyoffice.pfx $install_dir/documentserver/server/FileConverter/
+    mv euro-office.pfx $install_dir/documentserver/server/FileConverter/
 popd 
 
 #=================================================
@@ -74,9 +64,9 @@ popd
 ynh_script_progression "Populating postgresql database $app..."
 
 db_dump="$install_dir/documentserver/server/schema/postgresql/createdb.sql"
-echo "alter table doc_changes owner to $app;" >> $db_dump
-echo "alter table task_result owner to $app;" >> $db_dump
-ynh_psql_db_shell $app < "$install_dir/documentserver/server/schema/postgresql/createdb.sql"
+echo "alter table doc_changes owner to $db_name;" >> $db_dump
+echo "alter table task_result owner to $db_name;" >> $db_dump
+ynh_psql_db_shell $db_name < "$install_dir/documentserver/server/schema/postgresql/createdb.sql"
 
 #=================================================
 # SYSTEM CONFIGURATION
