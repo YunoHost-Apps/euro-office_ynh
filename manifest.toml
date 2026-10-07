@@ -46,7 +46,7 @@ ram.runtime = "800M"
     default = "visitors"
 
     [install.allowed_urls]
-    ask.en = "List of web addresses authorized to integrate the Euro-Office editor separated by space"
+    ask.en = "List of web addresses authorized to integrate Euro-Office editor separated by space"
     ask.fr = "Liste des adresses web autorisées à intégrer l'éditeur Euro-Office séparées par un espace"
     help.en = "Install the Euro-Office connector to edit documents from Nextcloud."
     help.fr = "Installez le connecteur Euro-Office pour éditer des documents dans Nextcloud."

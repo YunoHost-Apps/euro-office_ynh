@@ -7,10 +7,10 @@ name.en = "Integration"
 services = ["nginx", "__APP__-docservice"]
 
 	[main.integration.allowed_urls]
-	ask.en = "List of web addresses authorized to integrate the OnlyOffice editor separated by space"
-	ask.fr = "Liste des adresses web autorisées à intégrer l'éditeur OnlyOffice séparées par un espace"
-	help.en = "Install the OnlyOffice connector to edit documents from Nextcloud."
-	help.fr = "Installez le connecteur OnlyOffice pour éditer des documents dans Nextcloud."
+	ask.en = "List of web addresses authorized to integrate Euro-Office editor separated by space"
+	ask.fr = "Liste des adresses web autorisées à intégrer l'éditeur Euro-Office séparées par un espace"
+	help.en = "Install Euro-Office connector to edit documents from Nextcloud."
+	help.fr = "Installez le connecteur Euro-ffice pour éditer des documents dans Nextcloud."
 	type = "string"
 	example = "https://cloud.yunohost.domain/nextcloud https://example.com"
 
