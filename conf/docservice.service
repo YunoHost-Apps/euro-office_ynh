@@ -1,5 +1,5 @@
 [Unit]
-Description=Docs Docservice
+Description=Euro-Office: docs Docservice
 PartOf=__APP__.service
 After=network.target syslog.target redis-server.service __APP__-metrics.service __APP__.service
 Wants=redis-server.service __APP__-metrics.service

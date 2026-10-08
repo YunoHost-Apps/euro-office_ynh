@@ -1,5 +1,5 @@
 [Unit]
-Description=__APP__
+Description=Euro-Office: create and edit documents collaboratively
 
 [Service]
 Type=oneshot
@@ -42,5 +42,3 @@ CapabilityBoundingSet=~CAP_SYS_ADMIN CAP_SYS_PTRACE CAP_SYSLOG
 
 [Install]
 WantedBy=multi-user.target
-
-
