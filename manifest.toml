@@ -93,7 +93,6 @@ ram.runtime = "800M"
     main.url = "/"
 
     [resources.ports]
-    main.default = 8095
 
     [resources.apt]
     packages = [
@@ -112,4 +111,4 @@ ram.runtime = "800M"
     type = "postgresql"
 
     [resources.nodejs]
-    version = "18"
+    version = "24"
