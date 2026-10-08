@@ -34,7 +34,7 @@ ram.runtime = "2000M"
 
     [install.path]
     type = "path"
-    default = "/office"
+    default = "/eurooffice"
 
     [install.init_main_permission]
     help.en = "You will only be able to connect Euro-Office to your app if both apps are public!"
