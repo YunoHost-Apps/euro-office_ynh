@@ -15,8 +15,6 @@ Pour configurer Euro-Office avec Nextcloud :
 - Adresse du serveur de documents : « https://__DOMAIN____PATH__ »
 - Clé secrète : « __JWT_SECRET__ »
 
-Euro-Office devrait désormais fonctionner avec votre Nextcloud !
-
 ### Seafile
 Ajouter les paramètres de configuration suivants à `seahub_settings.py`
 ```
@@ -65,15 +63,3 @@ Important : cela pourrait constituer une faille de sécurité si vous ne pouvez 
 
 ### Certaines modifications apportées aux documents sont perdues
 Si vous utilisez la synchronisation du client Nextcloud et les applications Web Euro-Office sur le même fichier, vous pouvez parfois être confronté à des situations où Euro-Office réécrit une modification effectuée à partir d'un appareil local et la synchronise avec le client Nextcloud. Vous devriez probablement adopter une pratique avec votre équipe pour éviter cette situation. Par exemple, en adoptant une convention de nommage pour les fichiers collaboratifs à ouvrir uniquement via le Web Euro-Office.
-
-### Qu'en est-il des limitations d'Euro-Office ? Est-il légal de les supprimer comme l'a fait ce package ?
-Euro-Office est édité par une société qui a décidé d'intégrer de fortes limitations à son « logiciel libre » (comme d'autres applications bureautiques). Ces limitations (20 sessions simultanées) ne sont pas faciles à comprendre pour les utilisateurs finaux (« pourquoi je ne peux pas modifier le document ??? »).
-
-Pour supprimer ces limitations et aider les éditeurs, il faut donc acheter une licence.
-
-D'un autre côté, nous savons que de nombreux hébergeurs indépendants n'ont pas les moyens de payer une licence coûteuse.
-
-De plus, Euro-Office Document Server est un logiciel AGPL v3 (comme YunoHost) qui a été popularisé en partie grâce à la renommée de cette licence... La licence AGPLv3 stipule que nous pouvons modifier le code source si nous publions le nouveau code source sous la même licence (ce que nous faisons ici : le patch est sous AGPLv3). 
-
-Donc, comme c'est légal et que de nombreux utilisateurs l'attendaient, nous avons décidé de corriger ces anti-fonctionnalités.
-

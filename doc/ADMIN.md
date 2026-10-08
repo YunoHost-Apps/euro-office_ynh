@@ -66,14 +66,3 @@ Important: it could be a security hole if you can't trust your local router, and
 
 ### Some change on documents are lost
 If you use nextcloud client synchronization and Euro-Office web apps on the same file, you could face sometimes situations where Euro-Office rewrites a change made from a local device that is synced with the nextcloud client. You probably should adopt a practice with your team to avoid this situation. For example, by adopting a naming convention for collaborative files to open by the web Euro-Office.
-
-### What about the Euro-Office limitations? Is it legal to remove them like this package did?
-Euro-Office is edited by a company which has decided to integrate strong limitations on their "free software" (like other office apps). Those limitations (20 sessions in the same time) are not easy to understand by end users ("why can't I edit the document???")
-
-So a way to remove those limitations and to help the editors is to buy a license.
-
-On the other hand, we know a lot of self hosters don't have enough money to pay expensive licence.
-
-And, Euro-Office Document Server is an AGPL v3 software (like YunoHost) and was popularized thanks in part to the fame of this license... AGPLv3 license says we can change the source code if we publish the new source code with the same license (which is what we do here: the patch is under AGPLv3). 
-
-So, as it's legal and a lot of users waited for this, we decided to patch those anti-features.

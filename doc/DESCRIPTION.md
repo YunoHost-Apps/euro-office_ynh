@@ -2,5 +2,4 @@ Euro-Office Document Server is an online office suite comprising viewers and edi
 
 It could be connected with a lot of apps available in YunoHost like Nextcloud, Seafile, Yeswiki, Mattermost, Moodle and many others.
 
-Coming, but not yet... (Euro-Office Desktop and mobile apps exists too and can be used to edit your document on a local machine with equivalent features and rendering.)
-
+Euro-Office Desktop and mobile apps exists too and can be used to edit your document on a local machine with equivalent features and rendering.
