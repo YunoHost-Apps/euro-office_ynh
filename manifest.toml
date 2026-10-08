@@ -13,10 +13,7 @@ maintainers = []
 
 [upstream]
 license = "AGPL-3.0-or-later"
-#website = "https://www.onlyoffice.com"
-#demo = "https://www.onlyoffice.com/fr/download-desktop.aspx"
 code = "https://github.com/Euro-Office/DocumentServer"
-#cpe = "cpe:2.3:a:onlyoffice:document_server"
 
 [integration]
 yunohost = ">= 12.1.40"
