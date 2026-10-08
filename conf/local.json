@@ -84,7 +84,7 @@
   "FileConverter": {
       "converter": {
           "signing": {
-            "keyStorePath": "../documentserver/server/FileConverter/onlyoffice.pfx",
+            "keyStorePath": "../documentserver/server/FileConverter/euro-office.pfx",
             "keyStorePassword": ""
           }
       }
