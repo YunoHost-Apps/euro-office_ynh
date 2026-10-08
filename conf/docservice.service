@@ -13,7 +13,7 @@ ExecStart=/bin/sh -c 'exec __INSTALL_DIR__/documentserver/server/DocService/docs
 ExecStop=__INSTALL_DIR__/bin/documentserver-prepare4shutdown.sh
 StandardOutput=append:/var/log/__APP__/docservice.log
 StandardError=inherit
-Environment=NODE_ENV=production-linux NODE_CONFIG_DIR=__INSTALL_DIR__/config NODE_DISABLE_COLORS=1 APPLICATION_NAME=ONLYOFFICE
+Environment=NODE_ENV=production-linux NODE_CONFIG_DIR=__INSTALL_DIR__/config NODE_DISABLE_COLORS=1 APPLICATION_NAME=EURO-OFFICE
 
 Restart=always
 RestartSec=30
