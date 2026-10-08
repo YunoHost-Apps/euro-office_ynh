@@ -44,7 +44,7 @@ chmod 400 "$conf_dir/local.json"
 chown "$app:$app" "$conf_dir/local.json"
 
 pushd "$install_dir"
-    openssl req -x509 -newkey rsa:2048 \
+    ynh_hide_warnings openssl req -x509 -newkey rsa:2048 \
     -keyout euro-office.key \
     -out euro-office.crt \
     -days 3650 \
