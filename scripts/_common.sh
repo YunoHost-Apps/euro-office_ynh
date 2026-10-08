@@ -88,7 +88,7 @@ setup_sources() {
         ynh_replace --match="ds-docservice" --replace="$app-docservice" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-converter" --replace="$app-converter" --file="$install_dir/bin/$script"
     done
-    ynh_replace --match="localhost:8000" --replace="localhost:$port" --file="$install_dir/bin/documentserver-prepare4shutdown.sh"
+    ynh_replace --match="localhost:8000" --replace="127.0.0.1:$port" --file="$install_dir/bin/documentserver-prepare4shutdown.sh"
 
     ynh_replace --match=".*/etc/nginx/includes/ds-cache.conf.*" --replace='sed "/set $cache_tag /s/.*/set \$cache_tag \"$HASH\";/" /etc/nginx/conf.d/'$domain'.d/'$app'.conf' --file="$install_dir/bin/documentserver-flush-cache.sh"
     ynh_replace --match="documentserver-flush-cache.sh" --replace="$install_dir/bin/documentserver-flush-cache.sh" --file="$install_dir/bin/documentserver-generate-allfonts.sh"
