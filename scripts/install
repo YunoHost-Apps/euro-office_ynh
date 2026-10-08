@@ -40,8 +40,6 @@ configure_redis
 ynh_script_progression "Adding $app's configuration files..."
 
 ynh_config_add --template="local.json" --destination="$conf_dir/local.json"
-chmod 400 "$conf_dir/local.json"
-chown "$app:$app" "$conf_dir/local.json"
 
 pushd "$install_dir"
     ynh_hide_warnings openssl req -x509 -newkey rsa:2048 \
