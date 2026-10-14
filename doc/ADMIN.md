@@ -1,6 +1,6 @@
 ## Integrate your Euro-Office Server into an app
 
-To integrate the editors into your app (nextcloud, seafile, etc.):
+To integrate the editors into your apps (Nextcloud, Seafile, etc.):
 1. Install the dedicated Euro-Office connector extension in your apps
 2. Feed the following settings in the configuration of this extension and save (or restart the app service if it's a config file):
   - Address of the Document Server: "https://__DOMAIN____PATH__"
@@ -11,11 +11,9 @@ To integrate the editors into your app (nextcloud, seafile, etc.):
 To configure Euro-Office with Nextcloud:
 
 - Within Nextcloud, install the Nextcloud Office app
-- go to the settings under "Administration > Office > Server settings
+- Go to the settings under "Administration > Office > Server" settings
 - Address of the Document Server: "https://__DOMAIN____PATH__"
 - Secret key: "__JWT_SECRET__"
-
-Euro-Office should now work with your Nextcloud!
 
 ### Seafile
 Add the following config option to `seahub_settings.py`.
@@ -54,7 +52,7 @@ For Owncloud, Opencloud, Mattermost, Odoo, Moodle, Redmine, Wordpress, Humhub, y
 
 
 ## Questions & Answers
-### My app doesn't have a valid certificate (local ip). Could I connect it to Euro-Office ?
+### My app doesn't have a valid certificate (local ip). Could I connect it to Euro-Office?
 Yes, you could do it by deactivating `Prevent unauthenticated requests`. 
 
 Important: it could be a security hole if you can't trust your local router, and your local users...
@@ -65,4 +63,4 @@ Important: it could be a security hole if you can't trust your local router, and
  - Check your app doesn't contain a mechanism that forbids local request onto 127.0.0.1; if that is the case, you can try to delete `rm /etc/dsnmasq.d/__DOMAIN__` and restart the dnsmasq service `systemctl restart dnsmasq`
 
 ### Some change on documents are lost
-If you use nextcloud client synchronization and Euro-Office web apps on the same file, you could face sometimes situations where Euro-Office rewrites a change made from a local device that is synced with the nextcloud client. You probably should adopt a practice with your team to avoid this situation. For example, by adopting a naming convention for collaborative files to open by the web Euro-Office.
+If you use Nextcloud client synchronization and Euro-Office web apps on the same file, you could face sometimes situations where Euro-Office rewrites a change made from a local device that is synced with the nextcloud client. You probably should adopt a practice with your team to avoid this situation. For example, by adopting a naming convention for collaborative files to open by the web Euro-Office.
