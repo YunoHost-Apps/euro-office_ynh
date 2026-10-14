@@ -1,6 +1,6 @@
 ## Intégrez votre serveur Euro-Office dans une application
 
-Pour intégrer les éditeurs dans votre application (nextcloud, seafile, etc.) :
+Pour intégrer les éditeurs dans votre application (Nextcloud, Seafile, etc.) :
 1. Installez l'extension dédiée Euro-Office connector dans vos applications
 2. Effectuez les réglages suivants dans la configuration de cette extension et enregistrez (ou redémarrez le service de l'application s'il s'agit d'un fichier de configuration) :
   - Adresse du serveur de documents : « https://__DOMAIN____PATH__ »
@@ -32,19 +32,19 @@ Euro-Office_FORCE_SAVE = True
 Euro-Office_JWT_SECRET = '__JWT_SECRET__'
 ```
 
-Restart seafile
+Redémarrer Seafile
 ```
 systemctl restart seafile
 systemctl restart seahub
 ```
 
-### Yeswiki
+### YesWiki
 Une extension existe.
 Soyez libre de contribuer si vous trouvez comment l'installer.
-Cf: https://github.com/YesWiki/yeswiki-extension-documents/blob/main/services/Euro-OfficeDocumentProvider.php
+Cf : https://github.com/YesWiki/yeswiki-extension-documents/blob/main/services/Euro-OfficeDocumentProvider.php
 
 ### Moodle 
-Si on installe Moodle sur le même YNH qu'Euro-Office, il faut penser à enlever 127.0.0.0/8 de la curlsecurityblockedhosts (in Site Administration / Security / HTTP Security).
+Si on installe Moodle sur le même YNH qu'Euro-Office, il faut penser à enlever 127.0.0.0/8 de la curlsecurityblockedhosts (dans Site Administration / Security / HTTP Security).
 
 ### Autres
 
