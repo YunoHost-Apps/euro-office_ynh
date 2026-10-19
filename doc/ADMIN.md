@@ -19,14 +19,14 @@ To configure Euro-Office with Nextcloud:
 Add the following config option to `seahub_settings.py`.
 ```
 # Enable Euro-Office
-ENABLE_Euro-Office = True
-VERIFY_Euro-Office_CERTIFICATE = True
+ENABLE_Euro-Office = true
+VERIFY_Euro-Office_CERTIFICATE = true
 Euro-Office_APIJS_URL = 'https://__DOMAIN____PATH__/web-apps/apps/api/documents/api.js'
 Euro-Office_FILE_EXTENSION = ('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
 Euro-Office_EDIT_FILE_EXTENSION = ('docx', 'pptx', 'xlsx')
 
 # Enable force save to let user save file when he/she presses the save button on the Euro-Office file edit page.
-Euro-Office_FORCE_SAVE = True
+Euro-Office_FORCE_SAVE = true
 
 # if JWT enabled
 Euro-Office_JWT_SECRET = '__JWT_SECRET__'
