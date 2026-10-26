@@ -32,10 +32,6 @@ ram.runtime = "2000M"
     [install.domain]
     type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/eurooffice"
-
     [install.init_main_permission]
     help.en = "You must activate 'Visitors' if you want to connect Nextcloud client to Eur-Office server. This can be changed later via the webadmin."
     help.fr = "Vous devez activer 'Visiteurs' si vous souhaitez connecter le client Nextcloud au serveur euro-Office. Cela peut être modifié ultérieurement via l'administrateur Web."
