@@ -7,7 +7,7 @@ name = "Euro-Office"
 description.en = "Create and edit documents collaboratively"
 description.fr = "Créez et éditer des documents collaborativement"
 
-version = "9.3.5~ynh1"
+version = "9.3.7~ynh1"
 
 maintainers = []
 
@@ -51,10 +51,10 @@ ram.runtime = "2000M"
 [resources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.5/euro-office-documentserver_9.3.5-0_amd64.deb"
-    amd64.sha256 = "2c14ce8eabcf58bd4d6e56ca7304d565de48e6867f4bbd31ef41a9bacfcbaa13"
-    arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.5/euro-office-documentserver_9.3.5-0_arm64.deb"
-    arm64.sha256 = "a9ae23a193a64c19ff3a005515e8c148528418766857b099caeb7655fd6e0110"
+    amd64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.7/euro-office-documentserver_9.3.7-0_amd64.deb"
+    amd64.sha256 = "e853d938d91bd7b15c60940010a459fd7de18a04bee04afc7dbff313b0faba8a"
+    arm64.url = "https://github.com/Euro-Office/DocumentServer/releases/download/v9.3.7/euro-office-documentserver_9.3.7-0_arm64.deb"
+    arm64.sha256 = "afca3717441dfad266ac97511c6d96b5b2c9774aacb0306ac51af49320341961"
     extract = false
     rename = "euro-office-documentserver.deb"
     autoupdate.asset.amd64 = ".*amd64.deb$"
