@@ -23,14 +23,14 @@ setup_sources
 #=================================================
 # SETUP RABBIT MQ VHOST
 #=================================================
-ynh_script_progression "Configuring rabbitmq vhost $app..."
+ynh_script_progression "Configuring Rabbitmq..."
 
 ynh_rabbitmq_setup_vhost
 
 #=================================================
 # SETUP REDIS DB
 #=================================================
-ynh_script_progression "Configuring redis db..."
+ynh_script_progression "Configuring Redis..."
 
 configure_redis
 
@@ -59,7 +59,7 @@ popd
 #=================================================
 # SETUP DATABASE
 #=================================================
-ynh_script_progression "Populating postgresql database $app..."
+ynh_script_progression "Populating Postgresql database..."
 
 db_dump="$install_dir/documentserver/server/schema/postgresql/createdb.sql"
 echo "alter table doc_changes owner to $db_name;" >> $db_dump

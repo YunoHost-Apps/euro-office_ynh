@@ -53,5 +53,3 @@ CapabilityBoundingSet=~CAP_SYS_ADMIN CAP_SYS_PTRACE CAP_SYSLOG
 
 [Install]
 WantedBy=__APP__.service
-
-

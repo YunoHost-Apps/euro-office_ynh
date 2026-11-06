@@ -1,6 +1,6 @@
 ## Intégrez votre serveur Euro-Office dans une application
 
-Pour intégrer les éditeurs dans votre application (nextcloud, seafile, etc.) :
+Pour intégrer les éditeurs dans votre application (Nextcloud, Seafile, etc.) :
 1. Installez l'extension dédiée Euro-Office connector dans vos applications
 2. Effectuez les réglages suivants dans la configuration de cette extension et enregistrez (ou redémarrez le service de l'application s'il s'agit d'un fichier de configuration) :
   - Adresse du serveur de documents : « https://__DOMAIN____PATH__ »
@@ -19,32 +19,32 @@ Pour configurer Euro-Office avec Nextcloud :
 Ajouter les paramètres de configuration suivants à `seahub_settings.py`
 ```
 # Enable Euro-Office
-ENABLE_Euro-Office = True
-VERIFY_Euro-Office_CERTIFICATE = True
+ENABLE_Euro-Office = true
+VERIFY_Euro-Office_CERTIFICATE = true
 Euro-Office_APIJS_URL = 'https://__DOMAIN____PATH__/web-apps/apps/api/documents/api.js'
 Euro-Office_FILE_EXTENSION = ('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
 Euro-Office_EDIT_FILE_EXTENSION = ('docx', 'pptx', 'xlsx')
 
 # Enable force save to let user can save file when he/she press the save button on Euro-Office file edit page.
-Euro-Office_FORCE_SAVE = True
+Euro-Office_FORCE_SAVE = true
 
 # if JWT enabled
 Euro-Office_JWT_SECRET = '__JWT_SECRET__'
 ```
 
-Restart seafile
+Redémarrer Seafile
 ```
 systemctl restart seafile
 systemctl restart seahub
 ```
 
-### Yeswiki
+### YesWiki
 Une extension existe.
 Soyez libre de contribuer si vous trouvez comment l'installer.
-Cf: https://github.com/YesWiki/yeswiki-extension-documents/blob/main/services/Euro-OfficeDocumentProvider.php
+Cf : https://github.com/YesWiki/yeswiki-extension-documents/blob/main/services/Euro-OfficeDocumentProvider.php
 
 ### Moodle 
-Si on installe Moodle sur le même YNH qu'Euro-Office, il faut penser à enlever 127.0.0.0/8 de la curlsecurityblockedhosts (in Site Administration / Security / HTTP Security).
+Si on installe Moodle sur le même YNH qu'Euro-Office, il faut penser à enlever 127.0.0.0/8 de la curlsecurityblockedhosts (dans Site Administration / Security / HTTP Security).
 
 ### Autres
 

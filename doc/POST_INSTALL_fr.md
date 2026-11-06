@@ -1,4 +1,3 @@
-__APP__ a été correctement installé :)
 
 Pour intégrer l'éditeur bureautique dans votre app (Nextcloud, Seafile, etc.):
 1. Installer l'extension connecteur dédié à votre application
@@ -9,5 +8,5 @@ Pour intégrer l'éditeur bureautique dans votre app (Nextcloud, Seafile, etc.):
 
 Plus d'info sont disponibles dans la documentation de ce paquet `Web administration > App > Euro-Office`.
 
-Si vous rencontrez un problème ou souhaitez améliorer cette application, veuillez ouvrir un nouveau ticket ici: <https://github.com/YunoHost-Apps/euro-office_ynh>
+Si vous rencontrez un problème ou souhaitez améliorer cette application, veuillez ouvrir un nouveau ticket ici : <https://github.com/YunoHost-Apps/euro-office_ynh>
 

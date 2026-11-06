@@ -48,21 +48,21 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression "Upgrading euro-office..."
+ynh_script_progression "Upgrading $app..."
 
 setup_sources
 
 #=================================================
 # SETUP RABBIT MQ VHOST
 #=================================================
-ynh_script_progression "Configuring rabbitmq vhost $app..."
+ynh_script_progression "Configuring Rabbitmq..."
 
 ynh_rabbitmq_setup_vhost
 
 #=================================================
 # SETUP REDIS DB
 #=================================================
-ynh_script_progression "Configuring redis db..."
+ynh_script_progression "Configuring Redis..."
 
 configure_redis
 

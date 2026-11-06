@@ -1,5 +1,3 @@
-__APP__ was successfully installed :)
-
 To integrate the office editor into your app (Nextcloud, Seafile, etc.):
 1. Install the connector extension dedicated to your application
 2. Configure the following settings in the extension configuration and save (or restart the service if it is a config file):
