@@ -88,7 +88,7 @@ setup_sources() {
         ynh_replace --match="ds-docservice" --replace="$app-docservice" --file="$install_dir/bin/$script"
         ynh_replace --match="ds-converter" --replace="$app-converter" --file="$install_dir/bin/$script"
     done
-    ynh_replace --match="localhost:8000" --replace="localhost:$port" --file="$install_dir/bin/documentserver-prepare4shutdown.sh"
+    ynh_replace --match="localhost:8000" --replace="127.0.0.1:$port" --file="$install_dir/bin/documentserver-prepare4shutdown.sh"
 
     ynh_replace --match=".*/etc/nginx/includes/ds-cache.conf.*" --replace='sed "/set $cache_tag /s/.*/set \$cache_tag \"$HASH\";/" /etc/nginx/conf.d/'$domain'.d/'$app'.conf' --file="$install_dir/bin/documentserver-flush-cache.sh"
     ynh_replace --match="documentserver-flush-cache.sh" --replace="$install_dir/bin/documentserver-flush-cache.sh" --file="$install_dir/bin/documentserver-generate-allfonts.sh"
@@ -100,15 +100,15 @@ setup_sources() {
 
 compile() {
     pushd "$install_dir"
-    ynh_hide_warnings npm install @yao-pkg/pkg
+        ynh_hide_warnings npm install @yao-pkg/pkg
     popd
     pushd "$install_dir/src"
-    ynh_hide_warnings npm ci
-    ynh_hide_warnings npm run build
+        ynh_hide_warnings npm ci
+        ynh_hide_warnings npm run build
 
-    ynh_hide_warnings ../node_modules/.bin/pkg DocService --options max_old_space_size=4096 -o $install_dir/documentserver/server/DocService/docservice
-    ynh_hide_warnings ../node_modules/.bin/pkg FileConverter -o $install_dir/documentserver/server/FileConverter/converter
-    ynh_hide_warnings ../node_modules/.bin/pkg Metrics -o $install_dir/documentserver/server/Metrics/metrics
+        ynh_hide_warnings ../node_modules/.bin/pkg DocService --options max_old_space_size=4096 -o $install_dir/documentserver/server/DocService/docservice
+        ynh_hide_warnings ../node_modules/.bin/pkg FileConverter -o $install_dir/documentserver/server/FileConverter/converter
+        ynh_hide_warnings ../node_modules/.bin/pkg Metrics -o $install_dir/documentserver/server/Metrics/metrics
     popd
 
     # Activate smartphone editor
